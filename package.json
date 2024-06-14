@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "monday-sdk-js": "^0.5.5"
+  }
+}
