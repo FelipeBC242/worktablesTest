@@ -61,7 +61,7 @@ const CountryList: React.FC = () => {
             };
           });
           setCountries(transformedData);
-          setFilteredCountries(transformedData);  // Initialize filteredCountries with all countries
+          setFilteredCountries(transformedData);
         }
       } catch (error) {
         console.error('Error fetching board data:', error);
