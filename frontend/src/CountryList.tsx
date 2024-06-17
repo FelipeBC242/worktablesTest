@@ -174,7 +174,7 @@ const CountryList: React.FC = () => {
                   <>
                     <Typography variant="body1">Weather: {weatherData.current.condition.text}</Typography>
                     <Typography variant="body1">Temperature: {weatherData.current.temp_c}°C</Typography>
-                    <Typography variant="body1">Updated: {weatherData.current.last_updated}°C</Typography>
+                    <Typography variant="body1">Updated: {weatherData.current.last_updated}</Typography>
                   </>
                 )}
                 {!weatherData && !errorMessage && (
