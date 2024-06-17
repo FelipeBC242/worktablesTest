@@ -1,6 +1,6 @@
 Worktables Hiring Test
 
-Front-End
+FRONT-END
 
 This React application allows users to search for countries and view detailed information along with weather data. Key components include:
 
@@ -10,8 +10,12 @@ This React application allows users to search for countries and view detailed in
 
 
 Key Files
+
+
     CountryList.tsx: Main component handling data fetching, filtering, and displaying information.
+
     monday.ts: Utility module for fetching country data from the backend.
+
 
 Usage
 
@@ -20,21 +24,30 @@ Start the app: npm start
 
 
 Dependencies
+
     React
+
     MUI
+
     react-window
+
     Axios
 
 
 
-Back-End
+
+
+BACK-END
 
 A tiny REST API built with Node.js and Express.js that fetches weather data for a given country using the WeatherAPI.
+
 
 Key Files
 
     index.ts: Main file defining the API endpoint and handling requests.
+
     .env: Stores the WeatherAPI key.
+
 
 
 Usage
@@ -49,4 +62,5 @@ Start the server: npm start
 API Endpoint
 
     GET /weather/
+
     : Fetches weather data for the specified country. 
