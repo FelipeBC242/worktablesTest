@@ -1,8 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); 
+
+body{ 
+  font-family: "Russo One", sans-serif; 
+  color: black;  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color:rgb(28, 25, 52);
 }
 
 #root {

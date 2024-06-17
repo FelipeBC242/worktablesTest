@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+Worktables Frontend
+This frontend application allows users to search for country information and display weather data for selected countries. The goal of the UI is to enable users to filter country data through a search bar, display the results in a list, and view detailed information along with weather data in a modal upon selecting a country.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+    Search Bar: Allows users to input text to filter countries.
+    Results List: Displays filtered country results. Each result is clickable.
+    Modal: Displays detailed country information and weather data when a country is selected.
 
-## Available Scripts
+Components
+CountryList.tsx
+The CountryList.tsx component is the main component that handles data fetching, filtering, and displaying country and weather information.
 
-In the project directory, you can run:
+State Variables
+    searchTerm: Stores the user's search input.
+    countries: Stores the list of all countries fetched from the backend.
+    filteredCountries: Stores the list of countries filtered based on the search term.
+    selectedCountry: Stores the currently selected country for which details are displayed.
+    weatherData: Stores the weather data for the selected country.
+    open: Boolean to control the visibility of the modal.
+    errorMessage: Stores error messages for display.
 
-### `npm start`
+Data Fetching
+The useEffect hook fetches country data from the backend when the component mounts. Another useEffect hook filters the countries based on the searchTerm.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Event Handlers
+    handleSearchChange: Updates the searchTerm state with the user's input.
+    handleCountryClick: Fetches weather data for the selected country and opens the modal.
+    handleClose: Closes the modal and resets the relevant state variables.
+    Row Component
+    Renders each country in the filtered list and handles the click event to fetch and display country details and weather data.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+monday.ts
+The monday.ts module handles the API calls to fetch country data from the backend.
 
-### `npm test`
+fetchBoardData
+Fetches data from the specified board on Monday.com using the provided API token and board ID.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Usage
+Search: Type in the search bar to filter countries.
+View Details: Click on a country from the list to view its details and weather data in a modal.
+Close Modal: Click the close button to close the modal.
 
-### `npm run build`
+Installation
+    Clone the repository.
+    Enter the frontend section
+    Install dependencies:
+        1. npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Start the development server:
+        2. npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Dependencies Used
+    react
+    @mui/material
+    react-window
+    axios
