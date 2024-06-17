@@ -25,20 +25,16 @@ app.get('/weather/:country', async (req, res) => {
     } catch (error) {
         if (axios.isAxiosError(error)) {
             if (error.response) {
-                // Server responded with a status other than 2xx
                 console.error('Error response from weather API:', error.response.data);
                 res.status(error.response.status).json({ error: error.response.data.error.message });
             } else if (error.request) {
-                // Request was made but no response was received
                 console.error('No response received from weather API:', error.request);
                 res.status(503).json({ error: 'No response received from weather API' });
             } else {
-                // Something went wrong in setting up the request
                 console.error('Error setting up request to weather API:', error.message);
                 res.status(500).json({ error: 'Error setting up request to weather API' });
             }
         } else {
-            // Handle non-Axios errors
             console.error('Unexpected error:', error);
             res.status(500).json({ error: 'An unexpected error occurred' });
         }
